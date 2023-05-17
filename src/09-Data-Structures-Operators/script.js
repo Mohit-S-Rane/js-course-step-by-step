@@ -94,19 +94,56 @@ Afterwards, test with your own test data!
 GOOD LUCK 😀
 */
 
-document.body.append(document.createElement('textarea'));
-document.body.append(document.createElement('button'));
+// document.body.append(document.createElement('textarea'));
+// document.body.append(document.createElement('button'));
 
-document.querySelector('button').addEventListener('click', function(){
-  const text = document.querySelector('textarea').value
-  const rows = text.split('\n')
+// document.querySelector('button').addEventListener('click', function(){
+//   const text = document.querySelector('textarea').value
+//   const rows = text.split('\n')
 
-  for(const [i, row] of rows.entries()) {
-    const [first, second] = row.toLowerCase().trim().split('_')
-    const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`
-    console.log(output);
+//   for(const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLowerCase().trim().split('_')
+//     const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`
+//     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+//   }
+// })
+
+///////////////////////////////////////
+// Working With Strings - Part 2
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schemedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schemedtmann'.split(' ')
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ')
+console.log(newName);
+
+const capitalizeName = function(name) {
+  const names = name.split(' ')
+  const nameUpper = [];
+
+  for (const n of names) {
+    nameUpper.push(n.replace(n[0], n[0].toUpperCase()))
   }
-})
+
+  console.log(nameUpper.join(' '));
+} 
+
+capitalizeName('jessica ann smith davis')
+capitalizeName('jonas schmedtmann');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
