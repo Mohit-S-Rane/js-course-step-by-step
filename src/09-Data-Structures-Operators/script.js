@@ -108,31 +108,42 @@ GOOD LUCK 😀
 //   }
 // })
 
-///////////////////////////////////////
+// /////////////////////////////////////
 // Working With Strings - Part 2
 
-console.log('a+very+nice+string'.split('+'));
-console.log('Jonas Schemedtmann'.split(' '));
+// console.log('a+very+nice+string'.split('+'));
+// console.log('Jonas Schemedtmann'.split(' '));
 
-const [firstName, lastName] = 'Jonas Schemedtmann'.split(' ')
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ')
-console.log(newName);
+// const [firstName, lastName] = 'Jonas Schemedtmann'.split(' ')
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ')
+// console.log(newName);
 
-const capitalizeName = function(name) {
-  const names = name.split(' ')
-  const nameUpper = [];
+// const capitalizeName = function(name) {
+//   const names = name.split(' ')
+//   const nameUpper = [];
 
-  for (const n of names) {
-    nameUpper.push(n.replace(n[0], n[0].toUpperCase()))
-  }
+//   for (const n of names) {
+//     nameUpper.push(n.replace(n[0], n[0].toUpperCase()))
+//   }
 
-  console.log(nameUpper.join(' '));
-} 
+//   console.log(nameUpper.join(' '));
+// } 
 
-capitalizeName('jessica ann smith davis')
-capitalizeName('jonas schmedtmann');
+// capitalizeName('jessica ann smith davis')
+// capitalizeName('jonas schmedtmann');
 
-
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '#');
+};
+console.log(maskCreditCard(64637836));
+console.log(maskCreditCard(43378463864647384));
+console.log(maskCreditCard('334859493847755774747'));
 
 
 
